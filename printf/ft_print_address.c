@@ -31,35 +31,38 @@ static void	ft_write_hexa(int i, char c)
 	}
 }
 
-static void	ft_print_hexa_add(unsigned long i, char c)
+int	ft_print_hexa_add(unsigned long i, char c)
 {
 	unsigned long	temp[16];
 	unsigned long	count;
+	int				result;
 
 	count = 0;
 	if (i == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
+		return (ft_print_char('0'));
 	while (i > 0)
 	{
 		temp[count] = i % 16;
 		i /= 16;
 		count++;
 	}
+	result = count;
 	while (count-- > 0)
 		ft_write_hexa(temp[count], c);
+	return (result);
 }
 
-void	ft_print_address(void *ptr)
+int	ft_print_address(void *ptr)
 {
 	unsigned long	addr;
 
 	addr = (unsigned long)ptr;
 	ft_print_string("0x");
 	if (addr == 0)
+	{
 		ft_print_char('0');
+		return (3);
+	}
 	else
-		ft_print_hexa_add(addr, 'x');
+		return (ft_print_hexa_add(addr, 'x'));
 }

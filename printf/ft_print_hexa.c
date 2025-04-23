@@ -31,25 +31,25 @@ static void	ft_write_hexa(int i, char c)
 	}
 }
 
-void	ft_print_hexa(int i, char c)
+int	ft_print_hexa(int i, char c)
 {
 	int	temp[16];
 	int	count;
+	int	result;
 
 	count = 0;
 	if (i == 0)
-	{
-		write(1, "0", 1);
-		return ;
-	}
+		return (ft_print_char('0'));
 	while (i > 0)
 	{
 		temp[count] = i % 16;
 		i /= 16;
 		count++;
 	}
+	result = count;
 	while (count-- > 0)
 		ft_write_hexa(temp[count], c);
+	return (result);
 }
 
 // int		main(void)

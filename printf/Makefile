@@ -5,7 +5,7 @@ NAME    = libftprintf.a
 INCS    = includes
 
 SRCS    =	ft_print_address.c ft_print_char.c ft_print_hexa.c ft_print_int.c \
-			ft_print_string.c ft_printf.c
+			ft_print_string.c ft_printf.c ft_strlen.c
 
 SRC_BONUS =	
 

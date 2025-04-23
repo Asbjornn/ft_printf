@@ -12,40 +12,45 @@
 
 #include "ft_printf.h"
 
-void	ft_print_int(int i)
+int	ft_print_int(int i)
 {
+	int	result;
+
+	result = 0;
 	if (i == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
+		return (ft_print_string("-2147482648"));
 	if (i < 0)
 	{
-		write(1, "-", 1);
+		result += ft_print_char('-');
 		i *= -1;
 	}
 	if (i > 9)
 	{
-		ft_print_int(i / 10);
-		ft_print_int(i % 10);
+		result += ft_print_int(i / 10);
+		result += ft_print_int(i % 10);
 	}
 	else
 	{
 		i += 48;
-		write(1, &i, 1);
+		result += ft_print_char(i);
 	}
+	return (result);
 }
 
-void	ft_print_u_int(unsigned int i)
+int	ft_print_u_int(unsigned int i)
 {
+	int	result;
+
+	result = 0;
 	if (i > 9)
 	{
-		ft_print_int(i / 10);
-		ft_print_int(i % 10);
+		result += ft_print_int(i / 10);
+		result += ft_print_int(i % 10);
 	}
 	else
 	{
 		i += 48;
-		write(1, &i, 1);
+		result += ft_print_char(i);
 	}
+	return (result);
 }
