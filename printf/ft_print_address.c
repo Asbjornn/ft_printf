@@ -38,7 +38,7 @@ int	ft_print_hexa_add(unsigned long i, char c)
 	int				result;
 
 	count = 0;
-	if (i == 0)
+	if (!i)
 		return (ft_print_char('0'));
 	while (i > 0)
 	{
@@ -55,14 +55,12 @@ int	ft_print_hexa_add(unsigned long i, char c)
 int	ft_print_address(void *ptr)
 {
 	unsigned long	addr;
+	int				result;
 
+	if (!ptr)
+		return (ft_print_string("(nil)"));
+	result = 0;
 	addr = (unsigned long)ptr;
-	ft_print_string("0x");
-	if (addr == 0)
-	{
-		ft_print_char('0');
-		return (3);
-	}
-	else
-		return (ft_print_hexa_add(addr, 'x'));
+	result += ft_print_string("0x");
+	return (result += ft_print_hexa_add(addr, 'x'));
 }

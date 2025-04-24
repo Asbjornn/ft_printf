@@ -33,17 +33,19 @@ static void	ft_write_hexa(int i, char c)
 
 int	ft_print_hexa(int i, char c)
 {
-	int	temp[16];
-	int	count;
-	int	result;
+	unsigned int	temp[16];
+	unsigned int	count;
+	unsigned int	n;
+	int				result;
 
+	n = (unsigned int)i;
 	count = 0;
-	if (i == 0)
+	if (n == 0)
 		return (ft_print_char('0'));
-	while (i > 0)
+	while (n > 0)
 	{
-		temp[count] = i % 16;
-		i /= 16;
+		temp[count] = n % 16;
+		n /= 16;
 		count++;
 	}
 	result = count;

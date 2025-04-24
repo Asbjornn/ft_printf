@@ -65,11 +65,11 @@ int	ft_printf(const char *s, ...)
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	void	*ptr;
-// 	int		i;
+//void	*ptr;
+//int		i;
 
-// 	i = 0;
-// 	ptr = &i;
+//i = 0;
+//ptr = &i;
 // 	ft_printf(" NULL %s NULL ", NULL);
 // 	ft_printf("Les test\n");
 // 	ft_printf("%d\n", 578);
@@ -78,9 +78,10 @@ int	ft_printf(const char *s, ...)
 // 	ft_printf("char -> %c\n", 'c');
 // 	ft_printf("pourentage -> %%\n", 'c');
 // 	ft_printf("%c", '0');
-// 	ft_printf("base 16 minuscule -> %x\n", 255);
+// 	ft_printf("base 16 minuscule -> %x\n", -1);
 // 	ft_printf("base 16 majuscule -> %X\n", 16);
-// 	ft_printf("pointeur ->     %p\n", ptr);
-// 	printf("real function : %p\n", ptr);
+// 	ft_printf("pointeur ->     %p\n", 0);
+// 	ft_printf("test RAAMY -> %d,\n%s\n", 23, "Bonjour");
+// 	printf("real function : %x\n", -1);
 // 	return (0);
 // }

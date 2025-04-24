@@ -18,7 +18,7 @@ int	ft_print_int(int i)
 
 	result = 0;
 	if (i == -2147483648)
-		return (ft_print_string("-2147482648"));
+		return (ft_print_string("-2147483648"));
 	if (i < 0)
 	{
 		result += ft_print_char('-');

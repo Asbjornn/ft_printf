@@ -17,12 +17,12 @@
 # include <unistd.h>
 
 size_t	ft_strlen(const char *s);
-int	ft_print_address(void *ptr);
-int	ft_print_char(char c);
-int	ft_print_hexa(int i, char c);
-int	ft_print_int(int i);
-int	ft_print_u_int(unsigned int i);
-int	ft_print_string(char *str);
+int		ft_print_address(void *ptr);
+int		ft_print_char(char c);
+int		ft_print_hexa(int i, char c);
+int		ft_print_int(int i);
+int		ft_print_u_int(unsigned int i);
+int		ft_print_string(char *str);
 int		ft_printf(const char *s, ...);
 
 #endif
